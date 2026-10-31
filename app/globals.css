@@ -22,6 +22,11 @@
 }
 
 @layer base {
+  /* El prototipo usa el line-height `normal` del navegador; el preflight de
+     Tailwind lo fija en 1.5 y agranda inputs, botones y navbar. */
+  html {
+    line-height: normal;
+  }
   body {
     margin: 0;
     background: var(--background);
@@ -176,4 +181,32 @@
   .type{display:inline-block;overflow:hidden;white-space:nowrap;border-right:3px solid #f5ff00;width:0;animation:typing 1.4s steps(20) .1s forwards,caret .7s steps(1) infinite}
   @keyframes typing{to{width:20ch}}
   @keyframes caret{50%{border-color:transparent}}
+}
+
+/* accesibilidad: foco visible y movimiento reducido */
+:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .flicker,
+  .blink,
+  .pulse,
+  .grid-anim .grid-bg {
+    animation: none !important;
+  }
+  .view,
+  .slidein,
+  .frow {
+    animation: none !important;
+    opacity: 1;
+  }
 }
