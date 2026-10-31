@@ -63,9 +63,13 @@ export const GAMES: Game[] = [
   },
 ];
 
-/** Categorías únicas, en el orden en que aparecen los juegos (para los chips de filtro). */
+/** Categorías de los chips de filtro, en el orden del prototipo. */
 export const CATEGORIES: Category[] = [
-  ...new Set(GAMES.map((g) => g.category)),
+  "PUZLE",
+  "DISPAROS",
+  "LABERINTO",
+  "ROMPELADRILLOS",
+  "CLÁSICO",
 ];
 
 export function isGameId(value: string): value is GameId {

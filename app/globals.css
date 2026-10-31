@@ -22,6 +22,11 @@
 }
 
 @layer base {
+  /* El prototipo usa el line-height `normal` del navegador; el preflight de
+     Tailwind lo fija en 1.5 y agranda inputs, botones y navbar. */
+  html {
+    line-height: normal;
+  }
   body {
     margin: 0;
     background: var(--background);
