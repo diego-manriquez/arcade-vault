@@ -1,6 +1,6 @@
 # SPEC 01 — MVP visual de Arcade Vault (todas las pantallas)
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** Ninguna
 > **Date:** 2026-10-31
 > **Objective:** Portar a Next.js (App Router, Tailwind v4) todas las pantallas del prototipo `references/ARCADE VAULT – Arcade Vault — App.html`, separadas por ruta y componente, solo en su parte visual y sin implementar ningún juego.
