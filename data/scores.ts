@@ -1,6 +1,7 @@
 import { GAMES } from "@/data/games";
 import type { GameId } from "@/types/game";
 import type { ScoreEntry } from "@/types/score";
+import type { MockUser } from "@/types/user";
 
 /** Puntuación del puesto 1 de cada juego (base de la semilla del prototipo). */
 const BASE_SCORE: Record<GameId, number> = {
@@ -47,8 +48,13 @@ const SCORES: Record<GameId, ScoreEntry[]> = Object.fromEntries(
   GAMES.map((g, i) => [g.id, buildTop10(g.id, i)]),
 ) as Record<GameId, ScoreEntry[]>;
 
-export function getTopScores(id: GameId): ScoreEntry[] {
-  return SCORES[id];
+/** Top 10 del juego. Con `user`, marca `isMine` en las filas cuyo alias coincide. */
+export function getTopScores(id: GameId, user?: MockUser | null): ScoreEntry[] {
+  if (!user) return SCORES[id];
+  return SCORES[id].map((entry) => ({
+    ...entry,
+    isMine: entry.name === user.name,
+  }));
 }
 
 export function getBestScore(id: GameId): number {
