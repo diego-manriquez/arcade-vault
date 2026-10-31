@@ -177,3 +177,31 @@
   @keyframes typing{to{width:20ch}}
   @keyframes caret{50%{border-color:transparent}}
 }
+
+/* accesibilidad: foco visible y movimiento reducido */
+:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .flicker,
+  .blink,
+  .pulse,
+  .grid-anim .grid-bg {
+    animation: none !important;
+  }
+  .view,
+  .slidein,
+  .frow {
+    animation: none !important;
+    opacity: 1;
+  }
+}

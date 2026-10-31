@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Courier_Prime, Press_Start_2P } from "next/font/google";
+import { Backdrop } from "@/components/layout/Backdrop";
+import { Navbar } from "@/components/layout/Navbar";
+import { getMockUser } from "@/lib/session";
 import "./globals.css";
 
 const courierPrime = Courier_Prime({
@@ -25,7 +28,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${courierPrime.variable} ${pressStart.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="scan grid-anim relative flex min-h-screen flex-1 flex-col overflow-hidden">
+          <Backdrop />
+          <div className="relative z-10 flex flex-1 flex-col">
+            <Navbar user={getMockUser()} />
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
