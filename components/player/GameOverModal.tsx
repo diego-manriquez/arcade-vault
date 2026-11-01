@@ -44,7 +44,7 @@ export function GameOverModal({ score, isGuest, onPlayAgain }: GameOverModalProp
 
       <div className="mt-1.5 flex flex-wrap justify-center gap-3">
         <Button onClick={onPlayAgain}>Jugar de nuevo</Button>
-        <Button href="/" variant="magenta">
+        <Button href="/biblioteca" variant="magenta">
           Volver al Vault
         </Button>
       </div>

@@ -14,7 +14,7 @@ export default function NotFound() {
         Esta dirección no existe en el Vault. Vuelve a la biblioteca y elige un
         juego de la lista.
       </p>
-      <Button href="/" variant="yellow">
+      <Button href="/biblioteca" variant="yellow">
         Volver al Vault
       </Button>
     </main>

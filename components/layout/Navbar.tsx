@@ -27,7 +27,7 @@ export function Navbar({ user }: NavbarProps) {
           <Link
             href="/"
             className="logo-btn inline-flex items-center no-underline"
-            aria-label="Arcade Vault, ir a la Biblioteca"
+            aria-label="Arcade Vault, ir al Inicio"
           >
             <span className="px neon-c text-sm">
               ARCADE<span className="neon-m"> VAULT</span>

@@ -7,9 +7,9 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    href: "/",
+    href: "/biblioteca",
     label: "Biblioteca",
-    isActive: (p) => p === "/" || p.startsWith("/juegos"),
+    isActive: (p) => p.startsWith("/biblioteca") || p.startsWith("/juegos"),
   },
   {
     href: "/salon-de-la-fama",
