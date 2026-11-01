@@ -21,10 +21,10 @@ export function HomeHero() {
         </p>
         <div className="home-ctas">
           <Link href="/biblioteca" className="home-btn xl home-btn-pulse">
-            ▶&nbsp; EXPLORAR JUEGOS
+            ▶ EXPLORAR JUEGOS
           </Link>
           <Link href="/acceso" className="home-btn xl magenta">
-            ✦&nbsp; CREAR CUENTA
+            ✦ CREAR CUENTA
           </Link>
         </div>
         <div className="hero-scroll" aria-hidden="true">

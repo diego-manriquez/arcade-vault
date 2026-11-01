@@ -1,6 +1,10 @@
 import { FeatureGrid } from "@/components/home/FeatureGrid";
+import { FinalCta } from "@/components/home/FinalCta";
 import { GamesPreview } from "@/components/home/GamesPreview";
 import { HomeHero } from "@/components/home/HomeHero";
+import { LiveActivity } from "@/components/home/LiveActivity";
+import { Pricing } from "@/components/home/Pricing";
+import { StatsBand } from "@/components/home/StatsBand";
 
 export default function HomePage() {
   return (
@@ -8,7 +12,10 @@ export default function HomePage() {
       <HomeHero />
       <FeatureGrid />
       <GamesPreview />
-      {/* Estadísticas, actividad, precios y CTA final: pasos 9-10 del SPEC 02. */}
+      <StatsBand />
+      <LiveActivity />
+      <Pricing />
+      <FinalCta />
     </main>
   );
 }

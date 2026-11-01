@@ -7,6 +7,11 @@ export interface NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   {
+    href: "/",
+    label: "Inicio",
+    isActive: (p) => p === "/",
+  },
+  {
     href: "/biblioteca",
     label: "Biblioteca",
     isActive: (p) => p.startsWith("/biblioteca") || p.startsWith("/juegos"),
