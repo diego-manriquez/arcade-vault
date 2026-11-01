@@ -31,7 +31,7 @@ export default async function GameDetailPage(props: PageProps<"/juegos/[id]">) {
 
   return (
     <main className="view mx-auto w-full max-w-[1180px] px-5 pb-20 pt-10">
-      <Button href="/" variant="ghost" className="mb-8">
+      <Button href="/biblioteca" variant="ghost" className="mb-8">
         ← Volver al Vault
       </Button>
 
@@ -68,7 +68,7 @@ export default async function GameDetailPage(props: PageProps<"/juegos/[id]">) {
             >
               Jugar ahora
             </Button>
-            <Button href="/" variant="magenta" className="!px-[22px] !py-5">
+            <Button href="/biblioteca" variant="magenta" className="!px-[22px] !py-5">
               Volver al Vault
             </Button>
           </div>

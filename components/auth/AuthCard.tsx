@@ -30,7 +30,7 @@ export function AuthCard() {
       </div>
 
       <div className="mt-6 flex flex-col items-center gap-2.5 border-t-2 border-dashed border-[#2d2d45] pt-[22px] text-center">
-        <Button href="/" variant="yellow" className="w-full">
+        <Button href="/biblioteca" variant="yellow" className="w-full">
           Jugar como invitado
         </Button>
         <span className="text-sm text-[#b9b9d2]">

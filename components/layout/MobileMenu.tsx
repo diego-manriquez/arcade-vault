@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import type { MockUser } from "@/types/user";
 import { NAV_ITEMS } from "./nav-items";
@@ -29,20 +28,26 @@ export function MobileMenu({ open, onClose, user }: MobileMenuProps) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onClose]);
 
+  const accountActive = pathname.startsWith("/acceso");
+
   return (
     <>
-      {open && <div className="scrim" onClick={onClose} aria-hidden="true" />}
+      <div
+        className={cn("av-mobile-backdrop", open && "open")}
+        onClick={onClose}
+        aria-hidden="true"
+      />
       <aside
         id="mobile-menu"
         aria-label="Menú móvil"
         aria-hidden={!open}
         inert={!open}
-        className={cn("panel", open && "open")}
+        className={cn("av-mobile-panel", open && "open")}
       >
-        <div className="mb-3 flex items-center justify-between">
-          <span className="px neon-c text-[11px]">
-            ARCADE<span className="neon-m"> VAULT</span>
-          </span>
+        <div className="mb-4 flex items-center justify-between">
+          <div className="pixel neon-cyan" style={{ fontSize: 11 }}>
+            MENÚ
+          </div>
           <button
             ref={closeRef}
             type="button"
@@ -64,34 +69,28 @@ export function MobileMenu({ open, onClose, user }: MobileMenuProps) {
               href={item.href}
               onClick={onClose}
               aria-current={active ? "page" : undefined}
-              className={cn("panel-link no-underline", active && "on")}
+              className={cn(active && "active")}
             >
               {item.label}
             </Link>
           );
         })}
+        <Link
+          href="/acceso"
+          onClick={onClose}
+          aria-current={accountActive ? "page" : undefined}
+          className={cn(accountActive && "active")}
+        >
+          {user ? "Cuenta" : "Iniciar Sesión"}
+        </Link>
 
-        {user ? (
-          <div className="mt-3 flex flex-col gap-2.5">
-            <span className="text-[#b9b9d2]">
-              Jugador: <strong className="text-white">{user.name}</strong>
-            </span>
-            <Button variant="ghost">Cerrar sesión</Button>
-          </div>
-        ) : (
-          <Button
-            href="/acceso"
-            variant="magenta"
-            className="mt-3"
-            onClick={onClose}
-          >
-            Iniciar Sesión
-          </Button>
-        )}
-
-        <p className="mt-auto text-[13px] text-[#8e8eab]">
-          INSERTA UNA MONEDA PARA JUGAR
-        </p>
+        <div style={{ flex: 1 }} />
+        <div
+          className="pixel"
+          style={{ fontSize: 9, color: "var(--ink-faint)", letterSpacing: "0.16em" }}
+        >
+          CRÉDITOS · 03
+        </div>
       </aside>
     </>
   );
