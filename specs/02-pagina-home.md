@@ -1,6 +1,6 @@
 # SPEC 02 — Página Home (landing) de Arcade Vault
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 01
 > **Date:** 2026-10-31
 > **Objective:** Añadir la página Home (landing) en `/` con el diseño idéntico a `references/home-about`, mover la Biblioteca a `/biblioteca` y adaptar el navbar a la referencia, sin implementar la página About.
