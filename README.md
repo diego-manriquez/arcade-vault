@@ -15,6 +15,20 @@ https://github.com/Klerith/fernando-skills
 npx skills@latest add Klerith/fernando-skills
 ```
 
+## Variables de entorno (formulario de contacto)
+
+El formulario de `/acerca-de` envía correos con [Resend](https://resend.com).
+
+```bash
+cp .env.example .env.local   # y completa los valores
+```
+
+| Variable | Descripción |
+|----------|-------------|
+| `RESEND_API_KEY` | API key de Resend (solo servidor). |
+| `CONTACT_TO_EMAIL` | Destinatario de los mensajes. Con `onboarding@resend.dev`, debe ser el correo dueño de la cuenta de Resend. |
+| `CONTACT_FROM_EMAIL` | Remitente, p. ej. `Arcade Vault <onboarding@resend.dev>`. Para un dominio propio, verifícalo antes en Resend. |
+
 ## Commands
 
 ```bash
