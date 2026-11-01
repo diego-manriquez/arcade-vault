@@ -21,6 +21,11 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Salón de la Fama",
     isActive: (p) => p.startsWith("/salon-de-la-fama"),
   },
+  {
+    href: "/acerca-de",
+    label: "Acerca de",
+    isActive: (p) => p.startsWith("/acerca-de"),
+  },
 ];
 
 /** La pantalla de juego va a pantalla completa, sin navbar. */
