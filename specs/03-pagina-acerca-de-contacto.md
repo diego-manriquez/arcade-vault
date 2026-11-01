@@ -1,6 +1,6 @@
 # SPEC 03 — Página "Acerca de" y formulario de contacto con Resend
 
-> **Status:** Approved
+> **Status:** Implemented
 > **Depends on:** SPEC 01, SPEC 02
 > **Date:** 2026-10-31
 > **Objective:** Añadir la página "Acerca de" en `/acerca-de` con el diseño de `references/home-about` y hacer que su formulario de contacto envíe un correo real al equipo mediante Resend desde una Server Action.
